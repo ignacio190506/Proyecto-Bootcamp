@@ -6,6 +6,8 @@ package clases_trabajo;
 import java.io.File;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -264,36 +266,50 @@ public class Output implements Interface {
         System.out.println ("RESUMEN DEL MONITOREO");
         // HACEMOS CICLO FOR PARA ENTRAR A CADA ELEMENTO DE LA LISTA 
         // Iterar sobre todos los objetos Lugar almacenados
-        for (Lugar lugar : resultados) {
-            Aire aire = lugar.getAire();
-            ICA ica = aire.getICA();
-            
-            // Accedemos a los componentes a través de ICA (si ListaComponentes tiene un getter)
-            // Aquí solo mostramos las métricas principales para simplificar el resumen.
-            
-            System.out.println("\n--- REGISTRO ID: " + lugar.getID() + " ---");
-            System.out.println("Tipo/Poblacion: " + lugar.getUrbanización() + " (" + lugar.getPoblacion() + " millones de habitantes)");
-            
-            System.out.println("\nMEDICIONES");
-            System.out.println("CO2: " + aire.getppm_Co2() + " ppm (" + String.format("%.2f", aire.getSaturacion_Co2()) + "%)");
-            System.out.println("Temperatura: " + aire.getTemperatura() + " Celcius");
-            System.out.println("PM10: " + ica.getPm10() + " ug/m | PM2.5: " + ica.getPm25() + " ug/m");
-            
-            System.out.println("\nCALIFICACIONES");
-            System.out.println("ICA Numerico: " + String.format("%.2f", ica.getClasificacion_N()));
-            System.out.println("ICA: " + ica.getClasificacion_T());
-            System.out.println("CO2: " + aire.getClasificacion_Co2());
-            System.out.println("CALIFICACION FINAL: " + lugar.getClasificación());
-            
-            // NOTA: Para obtener las RECOMENDACIONES, la clase Calificador o Lugar
-            // debería tener un método para obtenerlas directamente.
-            // Aquí solo mostramos una nota basada en la clasificación final.
-            ListaRecomendaciones recomendaciones = lugar.getListare();
-            ArrayList<String> listare = recomendaciones.obtenerRecomendaciones();
-            System.out.println("\nRecomendaciones");
-            for (String rec: listare) {
-                System.out.println("- " + rec);
-            }
+                try {
+            FileWriter registro = new FileWriter("Registro.txt");
+            for (Lugar lugar : resultados) {
+                Aire aire = lugar.getAire();
+                ICA ica = aire.getICA();
+
+                // Accedemos a los componentes a través de ICA (si ListaComponentes tiene un getter)
+                // Aquí solo mostramos las métricas principales para simplificar el resumen.
+
+                System.out.println("\n--- REGISTRO ID: " + lugar.getID() + " ---");
+                System.out.println("Tipo/Poblacion: " + lugar.getUrbanización() + " (" + lugar.getPoblacion() + " millones de habitantes)");
+
+                System.out.println("\nMEDICIONES");
+                System.out.println("CO2: " + aire.getppm_Co2() + " ppm (" + String.format("%.2f", aire.getSaturacion_Co2()) + "%)");
+                System.out.println("Temperatura: " + aire.getTemperatura() + " Celcius");
+                System.out.println("PM10: " + ica.getPm10() + " ug/m | PM2.5: " + ica.getPm25() + " ug/m");
+
+                System.out.println("\nCALIFICACIONES");
+                System.out.println("ICA Numerico: " + String.format("%.2f", ica.getClasificacion_N()));
+                System.out.println("ICA: " + ica.getClasificacion_T());
+                System.out.println("CO2: " + aire.getClasificacion_Co2());
+                System.out.println("CALIFICACION FINAL: " + lugar.getClasificación());
+
+                // NOTA: Para obtener las RECOMENDACIONES, la clase Calificador o Lugar
+                // debería tener un método para obtenerlas directamente.
+                // Aquí solo mostramos una nota basada en la clasificación final.
+                ListaRecomendaciones recomendaciones = lugar.getListare();
+                ArrayList<String> listare = recomendaciones.obtenerRecomendaciones();
+                System.out.println("\nRecomendaciones");
+                for (String rec: listare) {
+                    System.out.println(rec);
+                }
+                registro.write(lugar.getID() + ",");
+                registro.write(lugar.getUrbanización() + ",");
+                registro.write(lugar.getPoblacion() + ",");
+                registro.write(aire.getTemperatura() + ",");
+                registro.write(ica.getClasificacion_T() + ",");
+                registro.write(aire.getClasificacion_Co2() + ",");
+                registro.write(lugar.getClasificación());
+                registro.write("\n");
+        }
+        registro.close();
+        } catch (IOException e){
+            System.out.println("Error al escribir el archivo: " + e.getMessage());
         }
         
         System.out.println("\nMonitoreo completado exitosamente");
