@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="8673568_ic_fluent_open_folder_iconfinder-_1_.png" />
+    <None Remove="arrows_14056303.png" />
+    <None Remove="info_471662.png" />
+    <None Remove="next-button_11215775.png" />
+    <None Remove="right-arrow-hand-drawn-outline_35836.png" />
+    <None Remove="search_7079548.png" />
+    <None Remove="UDD.png" />
+    <None Remove="Universidad-del-Desarrollo-Universidad-de-Excelencia-19-320.png" />
+    <None Remove="WhatsApp Image 2025-11-21 at 21.08.58.jpeg" />
+    <None Remove="WhatsApp Image 2025-11-21 at 21.52.11.jpeg" />
+    <None Remove="WhatsApp Image 2025-11-22 at 18.16.41.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="8673568_ic_fluent_open_folder_iconfinder-_1_.png" />
+    <Resource Include="arrows_14056303.png" />
+    <Resource Include="info_471662.png" />
+    <Resource Include="next-button_11215775.png" />
+    <Resource Include="right-arrow-hand-drawn-outline_35836.png" />
+    <Resource Include="search_7079548.png" />
+    <Resource Include="UDD.png" />
+    <Resource Include="Universidad-del-Desarrollo-Universidad-de-Excelencia-19-320.png" />
+    <Resource Include="WhatsApp Image 2025-11-21 at 21.08.58.jpeg" />
+    <Resource Include="WhatsApp Image 2025-11-21 at 21.52.11.jpeg" />
+    <Resource Include="WhatsApp Image 2025-11-22 at 18.16.41.jpeg" />
+  </ItemGroup>
+
+</Project>
