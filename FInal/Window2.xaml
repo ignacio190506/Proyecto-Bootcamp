@@ -69,8 +69,8 @@
             <Label x:Name="po" Content="10" HorizontalAlignment="Left" Height="33" Margin="52,159,0,0" VerticalAlignment="Top" Width="136" FontSize="14" FontFamily="Arial Black"/>
             <Label x:Name="ta" Content="10&#xA;" HorizontalAlignment="Left" Height="33" Margin="62,233,0,0" VerticalAlignment="Top" Width="136" FontSize="14" FontFamily="Arial Black"/>
             <Label x:Name="ica" Content="10" HorizontalAlignment="Left" Height="34" Margin="448,3,0,0" VerticalAlignment="Top" Width="224" FontSize="14" FontFamily="Arial Black"/>
-            <Label x:Name="co2" Content="10%" HorizontalAlignment="Left" Height="34" Margin="454,81,0,0" VerticalAlignment="Top" Width="136" FontFamily="Arial Black" FontSize="14"/>
-            <Label x:Name="cf" Content="Malo" HorizontalAlignment="Left" Height="34" Margin="450,160,0,0" VerticalAlignment="Top" Width="136" FontFamily="Arial Black" FontSize="14"/>
+            <Label x:Name="co2" Content="10%" HorizontalAlignment="Left" Height="34" Margin="454,81,0,0" VerticalAlignment="Top" Width="157" FontFamily="Arial Black" FontSize="14"/>
+            <Label x:Name="cf" Content="Malo" HorizontalAlignment="Left" Height="34" Margin="450,160,0,0" VerticalAlignment="Top" Width="161" FontFamily="Arial Black" FontSize="14"/>
 
         </Grid>
         <Rectangle x:Name="Rectangulo_Titulo" HorizontalAlignment="Center" Height="44" Margin="0,44,0,0" VerticalAlignment="Top" Width="800">
