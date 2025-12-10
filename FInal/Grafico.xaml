@@ -24,7 +24,7 @@
         </Button>
         <Label Content="Muy bueno" HorizontalAlignment="Left" Height="40" Margin="673,340,0,0" VerticalAlignment="Top" Width="95" Opacity="0.4" FontSize="10"/>
         <Label Content="Ligeramente Bueno" HorizontalAlignment="Left" Height="40" Margin="421,340,0,0" VerticalAlignment="Top" Width="124" Opacity="0.4" FontSize="10"/>
-        <Label Content="Malo" HorizontalAlignment="Left" Height="40" Margin="216,340,0,0" VerticalAlignment="Top" Width="41" Opacity="0.4" FontSize="10"/>
+        <Label Content="Malo" HorizontalAlignment="Left" Height="40" Margin="210,340,0,0" VerticalAlignment="Top" Width="41" Opacity="0.4" FontSize="10"/>
         <Label Content="Gráfico Zonas" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="32" Margin="222,7,0,0" VerticalAlignment="Top" Width="386" FontFamily="Bahnschrift" FontSize="20"/>
     </Grid>
 </Window>
