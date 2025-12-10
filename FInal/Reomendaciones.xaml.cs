@@ -12,14 +12,12 @@ using System.Windows.Shapes;
 
 namespace FInal
 {
-    /// <summary>
-    /// Lógica de interacción para Reomendaciones.xaml
-    /// </summary>
     public partial class Reomendaciones : Window
     {
         public Reomendaciones()
-        {
+        { 
             InitializeComponent();
+            CargarDatosDesdeTXT();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -27,6 +25,36 @@ namespace FInal
             Window2 ventana = new Window2();
             ventana.Show();
             this.Close();
+        }
+
+        private void CargarDatosDesdeTXT()
+        {
+            string ruta = "C:\\Users\\ignac\\Documents\\NetBeansProjects\\Clases_trabajo\\Registro.txt"; 
+
+            if (!System.IO.File.Exists(ruta))
+            {
+                MessageBox.Show("No se encontró Registro.txt");
+                return;
+            }
+
+            string[] lineas = System.IO.File.ReadAllLines(ruta);
+
+            foreach (string linea in lineas)
+            {
+                string[] datos = linea.Split(',');
+                if (datos.Length < 7) continue;
+
+
+                if (datos[0] == App.DatoGlobal.ToString())
+                {
+            
+                    Recomendación_1.Content = datos[7];
+                    Recomendación_2.Content = datos[8];
+                    Recomendación_3.Content = datos[9];
+
+                    break;
+                }
+            }
         }
     }
 }
