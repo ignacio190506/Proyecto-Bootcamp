@@ -12,9 +12,7 @@ using System.Windows.Shapes;
 
 namespace FInal
 {
-    /// <summary>
-    /// Lógica de interacción para Información_2.xaml
-    /// </summary>
+
     public partial class Información_2 : Window
     {
         public Información_2()
