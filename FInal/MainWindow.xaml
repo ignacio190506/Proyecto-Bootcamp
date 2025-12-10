@@ -36,7 +36,7 @@
                 <Label Content="Ver grafico zonas" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="16" FontWeight="Bold" Opacity="0.75" Margin="223,0,0,0"/>
             </Grid>
             <Button Content="Button" HorizontalAlignment="Left" Height="29" Margin="220,77,0,0" VerticalAlignment="Top" Width="218" Visibility="Hidden"/>
-            <Label x:Name="mensaje" Content="" HorizontalAlignment="Left" Height="130" Margin="162,124,0,0" VerticalAlignment="Top" Width="481" FontSize="36" FontFamily="Cambria" FontWeight="Bold" Foreground="#FFE21212" Opacity="0.5"/>
+            <Label x:Name="mensaje" Content="" HorizontalAlignment="Left" Height="130" Margin="150,124,0,0" VerticalAlignment="Top" Width="481" FontSize="36" FontFamily="Cambria" FontWeight="Bold" Foreground="#FFE21212" Opacity="0.5"/>
             <Button Content="Button" HorizontalAlignment="Left" Height="37" Margin="624,254,0,0" VerticalAlignment="Top" Width="44" Click="Button_Click_2" Foreground="{x:Null}" BorderBrush="{x:Null}">
                 <Button.Background>
                     <ImageBrush ImageSource="/info_471662.png"/>
