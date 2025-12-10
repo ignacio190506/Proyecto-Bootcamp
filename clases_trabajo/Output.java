@@ -306,6 +306,10 @@ public class Output implements Interface {
                 registro.write(aire.getClasificacion_Co2() + ",");
                 registro.write(lugar.getClasificación());
                 registro.write("\n");
+                for (String rec: listare){
+                    registro.write(rec + ",");
+                }
+                registro.write("\n"); 
         }
         registro.close();
         } catch (IOException e){
