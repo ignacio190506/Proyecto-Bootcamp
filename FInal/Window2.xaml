@@ -64,7 +64,7 @@
             <Label Content="CO2:" HorizontalAlignment="Left" Height="32" Margin="401,77,0,0" VerticalAlignment="Top" Width="122" FontFamily="Bahnschrift SemiBold" FontSize="24" RenderTransformOrigin="8.789,4.262"/>
             <Button Content="Recomendaciones" HorizontalAlignment="Left" Height="35" Margin="417,229,0,0" VerticalAlignment="Top" Width="164" Click="Button_Click_1" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Bahnschrift SemiBold Condensed" FontSize="24" Foreground="#FF1F78E7"/>
             <Label x:Name="id_Copiar1" Content="" HorizontalAlignment="Left" Height="33" Margin="311,-100,0,0" VerticalAlignment="Top" Width="136" FontSize="22" FontFamily="Arial Black"/>
-            <Label x:Name="id_Copiar" Content="" HorizontalAlignment="Left" Height="63" Margin="311,-108,0,0" VerticalAlignment="Top" Width="199" FontSize="20" FontFamily="Cooper Black"/>
+            <Label x:Name="id_Copiar" Content="" HorizontalAlignment="Left" Height="63" Margin="311,-108,0,0" VerticalAlignment="Top" Width="199" FontSize="20" FontFamily="Arial Black"/>
             <Label x:Name="urba" Content="Rural" HorizontalAlignment="Left" Height="33" Margin="74,80,0,0" VerticalAlignment="Top" Width="136" FontSize="14" FontFamily="Arial Black"/>
             <Label x:Name="po" Content="10" HorizontalAlignment="Left" Height="33" Margin="52,159,0,0" VerticalAlignment="Top" Width="136" FontSize="14" FontFamily="Arial Black"/>
             <Label x:Name="ta" Content="10&#xA;" HorizontalAlignment="Left" Height="33" Margin="62,233,0,0" VerticalAlignment="Top" Width="136" FontSize="14" FontFamily="Arial Black"/>
