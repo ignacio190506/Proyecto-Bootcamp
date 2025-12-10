@@ -38,3 +38,4 @@
         <Label x:Name="Ofrecemos" Content="Lo que ofrecemos: Ponemos a disposición del usuario información &#xD;&#xA;de calidad como el ICA CO2 y otros de forma visible y ordenada" HorizontalAlignment="Left" Height="50" Margin="347,201,0,0" VerticalAlignment="Top" Width="443" FontFamily="Bahnschrift SemiBold" Visibility="Hidden" FontSize="14"/>
     </Grid>
 </Window>
+
