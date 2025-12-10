@@ -9,12 +9,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace FInal
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -33,6 +32,14 @@ namespace FInal
                 Buscador.Text = "";
             }
             if (mensaje.Content == "ERROR: Solo numeros")
+            {
+                mensaje.Content = "";
+            }
+            if (mensaje.Content == "ERROR: Archivo no encontrado")
+            {
+                mensaje.Content = "";
+            }
+            if (mensaje.Content == "ERROR: ID fuera de rango")
             {
                 mensaje.Content = "";
             }
@@ -58,20 +65,34 @@ namespace FInal
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             App.DatoGlobal = Buscador.Text;
-            if (App.DatoGlobal == "Search")
+            if (App.DatoGlobal == "Buscar..." || string.IsNullOrWhiteSpace(App.DatoGlobal))
             {
                 mensaje.Content = "ERROR: Solo numeros";
             }
-            else if (!int.TryParse(App.DatoGlobal, out _))
+            if (!int.TryParse(App.DatoGlobal, out int id))
             {
                 mensaje.Content = "ERROR: Solo numeros";
+                return;
             }
-            else
+            string ruta = "C:\\Users\\ignac\\Documents\\NetBeansProjects\\Clases_trabajo\\Registro.txt";
+
+            if (!File.Exists(ruta))
             {
-                Window2 ventana = new Window2();
-                ventana.Show();
-                this.Close();
+                mensaje.Content = "ERROR: Archivo no encontrado";
+                return;
             }
+
+            int cantidadRegistros = File.ReadAllLines(ruta).Length;
+
+            if (id < 1 || id > cantidadRegistros)
+            {
+                mensaje.Content = "ERROR: ID fuera de rango";
+                return;
+            }
+
+            Window2 ventana = new Window2();
+            ventana.Show();
+            this.Close();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
