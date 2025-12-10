@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using LiveCharts;
 using LiveCharts.Wpf;
+using System.IO;
 namespace FInal;
 
 public partial class Grafico : Window
@@ -22,14 +23,13 @@ public partial class Grafico : Window
     {
         InitializeComponent();
 
-        // Datos como los de tu gráfico
         Labels = new[]
         {
             "Peligro", "Malo", "Ligeramente malo",
             "Ligeramente bueno", "Bueno", "Muy bueno"
         };
 
-        var valores = new[] { 3, 6, 7, 7, 5, 2 };
+        int[] valores = ContarClasificaciones("C:\\Users\\ignac\\Documents\\NetBeansProjects\\Clases_trabajo\\Registro.txt");
 
         SeriesCollection = new SeriesCollection
         {
@@ -48,5 +48,63 @@ public partial class Grafico : Window
         MainWindow ventana = new MainWindow();
         ventana.Show();
         this.Close();
+    }
+
+    private int[] ContarClasificaciones(string ruta)
+    {
+        int peligro = 0;
+        int malo = 0;
+        int ligeramenteMalo = 0;
+        int ligeramenteBueno = 0;
+        int bueno = 0;
+        int muyBueno = 0;
+
+        if (!File.Exists(ruta))
+            return new int[6]; 
+
+        foreach (string linea in File.ReadLines(ruta))
+        {
+            if (string.IsNullOrWhiteSpace(linea))
+                continue;
+
+            string[] datos = linea.Split(',');
+
+            if (datos.Length <= 6)
+                continue;
+
+            string clasificacion = datos[6].Trim().ToLower();
+
+            switch (clasificacion)
+            {
+                case "peligro":
+                    peligro++;
+                    break;
+                case "malo":
+                    malo++;
+                    break;
+                case "ligeramente malo":
+                    ligeramenteMalo++;
+                    break;
+                case "ligeramente bueno":
+                    ligeramenteBueno++;
+                    break;
+                case "bueno":
+                    bueno++;
+                    break;
+                case "muy bueno":
+                    muyBueno++;
+                    break;
+            }
+        }
+
+        return new int[]
+        {
+            peligro,
+            malo,
+            ligeramenteMalo,
+            ligeramenteBueno,
+            bueno,
+            muyBueno
+        };
     }
 }
