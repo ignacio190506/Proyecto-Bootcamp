@@ -12,9 +12,7 @@ using System.Windows.Shapes;
 
 namespace FInal
 {
-    /// <summary>
-    /// Lógica de interacción para Window2.xaml
-    /// </summary>
+
     public partial class Window2 : Window
     {
         public Window2()
@@ -67,10 +65,10 @@ namespace FInal
                 string[] datos = linea.Split(',');
                 if (datos.Length < 7) continue;
 
-                // datos[0] = ID
+      
                 if (datos[0] == App.DatoGlobal.ToString())
                 {
-                    // Rellenar labels EXACTAMENTE en orden
+       
                     urba.Content = datos[1];
                     po.Content = datos[2] + " (Mill)";
                     ta.Content = datos[3] + "°C";
