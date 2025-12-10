@@ -29,9 +29,9 @@
                 <ImageBrush ImageSource="/right-arrow-hand-drawn-outline_35836.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Label x:Name="Recomendación_1" Content="Recomendación 1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="36" Margin="113,154,0,0" VerticalAlignment="Top" Width="334" Foreground="#FF254CEE" FontFamily="Arial Black" FontSize="14"/>
-        <Label x:Name="Recomendación_2" Content="Recomendación 2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="36" Margin="113,250,0,0" VerticalAlignment="Top" Width="334" Foreground="#FF254CEE" FontSize="14" FontWeight="Bold" FontFamily="Arial Black"/>
-        <Label x:Name="Recomendación_3" Content="Recomendación 3" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="36" Margin="113,346,0,0" VerticalAlignment="Top" Width="334" Foreground="#FF254CEE" FontSize="14" FontWeight="Bold" FontFamily="Arial Black"/>
+        <Label x:Name="Recomendación_1" Content="Recomendación 1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="36" Margin="113,154,0,0" VerticalAlignment="Top" Width="624" Foreground="#FF254CEE" FontFamily="Arial Black" FontSize="14"/>
+        <Label x:Name="Recomendación_2" Content="Recomendación 2" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="36" Margin="113,250,0,0" VerticalAlignment="Top" Width="624" Foreground="#FF254CEE" FontSize="14" FontWeight="Bold" FontFamily="Arial Black"/>
+        <Label x:Name="Recomendación_3" Content="Recomendación 3" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="36" Margin="113,346,0,0" VerticalAlignment="Top" Width="624" Foreground="#FF254CEE" FontSize="14" FontWeight="Bold" FontFamily="Arial Black"/>
 
     </Grid>
 </Window>
