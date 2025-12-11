@@ -18,7 +18,6 @@ namespace FInal
         public Window2()
         {
             InitializeComponent();
-            id.Content = App.DatoGlobal;
             id_Copiar.Content = App.DatoGlobal;
             CargarDatosDesdeTXT();
         }
@@ -75,6 +74,7 @@ namespace FInal
                     ica.Content = datos[4];
                     co2.Content = datos[5];
                     cf.Content = datos[6];
+                    re.Content = datos[7];
 
                     break;
                 }
