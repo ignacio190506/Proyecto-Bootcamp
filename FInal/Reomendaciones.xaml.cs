@@ -42,15 +42,15 @@ namespace FInal
             foreach (string linea in lineas)
             {
                 string[] datos = linea.Split(',');
-                if (datos.Length < 7) continue;
+                if (datos.Length < 8) continue;
 
 
                 if (datos[0] == App.DatoGlobal.ToString())
                 {
             
-                    Recomendación_1.Content = datos[7];
-                    Recomendación_2.Content = datos[8];
-                    Recomendación_3.Content = datos[9];
+                    Recomendación_1.Content = datos[8];
+                    Recomendación_2.Content = datos[9];
+                    Recomendación_3.Content = datos[10];
 
                     break;
                 }
