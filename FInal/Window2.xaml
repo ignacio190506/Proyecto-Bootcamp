@@ -91,12 +91,12 @@
                 <ImageBrush ImageSource="/WhatsApp Image 2025-11-21 at 21.52.11.jpeg"/>
             </Button.Background>
         </Button>
-        <Rectangle HorizontalAlignment="Left" Height="39" Margin="565,372,0,0" VerticalAlignment="Top" Width="23">
+        <Rectangle HorizontalAlignment="Left" Height="33" Margin="563,376,0,0" VerticalAlignment="Top" Width="17">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/WhatsApp Image 2025-11-22 at 18.16.41.jpeg"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Button Content="Button" ToolTip="Leyenda" ToolTipService.ShowDuration = "5000" ToolTipService.InitialShowDelay="0" HorizontalAlignment="Left" Height="38" Margin="18,374,0,0" VerticalAlignment="Top" Width="44" Click="Button_Click_2" Foreground="{x:Null}" BorderBrush="{x:Null}" AutomationProperties.HelpText="Más Información">
+        <Button Content="Button" ToolTip="Leyenda" ToolTipService.ShowDuration = "5000" ToolTipService.InitialShowDelay="0" HorizontalAlignment="Left" Height="34" Margin="18,372,0,0" VerticalAlignment="Top" Width="36" Click="Button_Click_2" Foreground="{x:Null}" BorderBrush="{x:Null}" AutomationProperties.HelpText="Más Información">
             <Button.Background>
                 <ImageBrush ImageSource="/info_471662.png"/>
             </Button.Background>
