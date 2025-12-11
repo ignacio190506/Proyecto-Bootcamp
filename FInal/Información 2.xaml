@@ -93,14 +93,14 @@
                 <ImageBrush ImageSource="/WhatsApp Image 2025-11-21 at 21.52.11.jpeg"/>
             </Button.Background>
         </Button>
-        <Label Content="ID" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="105,75,0,0" VerticalAlignment="Top" Width="188" FontWeight="Bold" FontSize="20"/>
+        <Label Content="Re" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="105,75,0,0" VerticalAlignment="Top" Width="188" FontWeight="Bold" FontSize="20"/>
         <Label Content="Urba" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="105,122,0,0" VerticalAlignment="Top" Width="188" FontWeight="Bold" FontSize="20"/>
         <Label Content="Po" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="105,169,0,0" VerticalAlignment="Top" Width="188" FontWeight="Bold" FontSize="20"/>
         <Label Content="T°a" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="105,216,0,0" VerticalAlignment="Top" Width="188" FontWeight="Bold" FontSize="20"/>
         <Label Content="ICA" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="105,263,0,0" VerticalAlignment="Top" Width="188" FontWeight="Bold" FontSize="20"/>
         <Label Content="%CO2" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="105,310,0,0" VerticalAlignment="Top" Width="188" FontWeight="Bold" FontSize="20"/>
         <Label Content="C.F" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="42" Margin="105,357,0,0" VerticalAlignment="Top" Width="188" FontWeight="Bold" FontSize="20"/>
-        <Label Content="Identificador de la zona seleccionada" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="42" Margin="334,78,0,0" VerticalAlignment="Top" Width="243"/>
+        <Label Content="Región de la zona seleccionada" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="42" Margin="334,78,0,0" VerticalAlignment="Top" Width="243"/>
         <Label Content="Urbanización: Urbano/Rural" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="42" Margin="334,125,0,0" VerticalAlignment="Top" Width="188"/>
         <Label Content="Población: Cantidad de personas que habitan la zona" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="42" Margin="334,172,0,0" VerticalAlignment="Top" Width="306"/>
         <Label Content="Temperatura: Temperatura de la zona seleccionada" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Height="42" Margin="334,219,0,0" VerticalAlignment="Top" Width="291"/>
