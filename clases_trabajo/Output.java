@@ -6,9 +6,9 @@ package clases_trabajo;
 import java.io.File;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  *
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class Output implements Interface {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("SISTEMA DE MONITOREO DE CALIDAD DEL AIRE\n");
         
         // Inicialización de las listas que guardan los objetos
@@ -37,7 +37,7 @@ public class Output implements Interface {
         
         // EMPEZAMOS LA LECTURA DE ARCHIVOS
         // Asignación de variable al archivo a leer
-        String nombreArchivo = "C:\\Users\\ignac\\Desktop\\C, C++\\Clases\\Tareas\\output\\Datos.txt";
+        String nombreArchivo = "C:\\Users\\ignac\\Desktop\\Programación\\C, C++\\Clases\\Tareas\\output\\Datos.txt";
         
         System.out.println("Lectura de archivos... de" + nombreArchivo);
         try {
@@ -204,24 +204,29 @@ public class Output implements Interface {
 
                 // Agregar recomendaciones según la clasificación
                 if (clasificacionTotal.equals("Muy bueno")) {
-                    recomendaciones.agregarRecomendaciones("Excelente calidad del aire. Disfrute de actividades al aire libre.");
-                    recomendaciones.agregarRecomendaciones("No hay restricciones para ningun grupo poblacional.");
+                    recomendaciones.agregarRecomendaciones("Excelente calidad del aire. Disfrute de actividades al aire libre");
+                    recomendaciones.agregarRecomendaciones("No hay restricciones para ningun grupo poblacional");
+                    recomendaciones.agregarRecomendaciones("Unicamente personas con enfermedades cronicas respiratorias resguardarse");
                 } else if (clasificacionTotal.equals("Bueno")) {
                     recomendaciones.agregarRecomendaciones("Calidad del aire aceptable para la mayoria.");
-                    recomendaciones.agregarRecomendaciones("Personas sensibles deben considerar limitar actividades prolongadas al aire libre.");
+                    recomendaciones.agregarRecomendaciones("Personas sensibles deben considerar limitar actividades prolongadas al aire libre");
+                    recomendaciones.agregarRecomendaciones("Personas no sensibles pueden realizar cualquier tipo de actividad física");
                 } else if (clasificacionTotal.equals("Ligeramente Bueno")) {
                     recomendaciones.agregarRecomendaciones("Calidad de aire aceptable");
-                    recomendaciones.agregarRecomendaciones("Personas sensibles, niños y adultos mayors limitar actividades prolongadas al aire libre.");
+                    recomendaciones.agregarRecomendaciones("Personas sensibles niños y adultos mayores limitar actividades prolongadas al aire libre");
+                    recomendaciones.agregarRecomendaciones("Cualquier otra persona puede realizar las actividad de forma normal");
                 } else if (clasificacionTotal.equals("Ligeramente Malo")){
-                    recomendaciones.agregarRecomendaciones("Evitar el uso de automoviles, buses o cualquier medio de transporte contaminante.");
+                    recomendaciones.agregarRecomendaciones("Calidad de aire no recomendada");
+                    recomendaciones.agregarRecomendaciones("Evitar el uso de automoviles buses o cualquier medio de transporte contaminante");
                     recomendaciones.agregarRecomendaciones("Evitar la actividad fisica intensa y prolongada al aire libre");
                 } else if (clasificacionTotal.equals("Malo") || clasificacionTotal.equals("Peligro")) {
-                    recomendaciones.agregarRecomendaciones("Se recomienda no realizar ejercicio para nadie en la problacion.");
-                    recomendaciones.agregarRecomendaciones("Use mascarilla si debe salir.");
-                    recomendaciones.agregarRecomendaciones("Mantenga ventanas cerradas.");
+                    recomendaciones.agregarRecomendaciones("Se recomienda no realizar ejercicio para nadie en la problacion");
+                    recomendaciones.agregarRecomendaciones("Use mascarilla si debe salir");
+                    recomendaciones.agregarRecomendaciones("Mantenga ventanas cerradas");
                 } else {
                     recomendaciones.agregarRecomendaciones("Peligro inminente");
                     recomendaciones.agregarRecomendaciones("Se recomienda evacuar la zona");
+                    recomendaciones.agregarRecomendaciones("Peligro de enfermedades respiratorias");
                 }
 
                 calificador.setListaRe(recomendaciones);
@@ -266,7 +271,7 @@ public class Output implements Interface {
         System.out.println ("RESUMEN DEL MONITOREO");
         // HACEMOS CICLO FOR PARA ENTRAR A CADA ELEMENTO DE LA LISTA 
         // Iterar sobre todos los objetos Lugar almacenados
-                try {
+        try {
             FileWriter registro = new FileWriter("Registro.txt");
             for (Lugar lugar : resultados) {
                 Aire aire = lugar.getAire();
@@ -289,9 +294,7 @@ public class Output implements Interface {
                 System.out.println("CO2: " + aire.getClasificacion_Co2());
                 System.out.println("CALIFICACION FINAL: " + lugar.getClasificación());
 
-                // NOTA: Para obtener las RECOMENDACIONES, la clase Calificador o Lugar
-                // debería tener un método para obtenerlas directamente.
-                // Aquí solo mostramos una nota basada en la clasificación final.
+
                 ListaRecomendaciones recomendaciones = lugar.getListare();
                 ArrayList<String> listare = recomendaciones.obtenerRecomendaciones();
                 System.out.println("\nRecomendaciones");
@@ -304,20 +307,19 @@ public class Output implements Interface {
                 registro.write(aire.getTemperatura() + ",");
                 registro.write(ica.getClasificacion_T() + ",");
                 registro.write(aire.getClasificacion_Co2() + ",");
-                registro.write(lugar.getClasificación());
-                registro.write("\n");
+                registro.write(lugar.getClasificación() + ",");
                 for (String rec: listare){
                     registro.write(rec + ",");
                 }
-                registro.write("\n"); 
+                registro.write("\n");   
         }
         registro.close();
         } catch (IOException e){
             System.out.println("Error al escribir el archivo: " + e.getMessage());
         }
+         
         
         System.out.println("\nMonitoreo completado exitosamente");
     }
     
 }
-
